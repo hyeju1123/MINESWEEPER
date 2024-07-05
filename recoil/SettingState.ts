@@ -18,7 +18,7 @@ export const defaultSetting: SettingType = {
     level: "BEGINNER",
     rows: 8,
     cols: 8,
-    bombs: 8,
+    bombs: 10,
   },
   INTERMEDIATE: {
     level: "INTERMEDIATE",

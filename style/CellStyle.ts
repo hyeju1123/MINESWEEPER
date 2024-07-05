@@ -13,6 +13,10 @@ export const styles = StyleSheet.create({
     borderRightColor: theme.cellBorderBottom,
     backgroundColor: theme.background,
   },
+  revealed: {
+    borderWidth: 1,
+    borderColor: theme.cellBorderBottom,
+  },
   cellFont: {
     fontSize: 7,
   },

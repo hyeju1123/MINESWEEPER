@@ -1,5 +1,5 @@
 import { memo, useCallback, useMemo } from "react";
-import { Dimensions, TouchableOpacity } from "react-native";
+import { Alert, Dimensions, TouchableOpacity } from "react-native";
 import CustomText from "./CustomText";
 import { styles } from "@/style/CellStyle";
 
@@ -26,28 +26,48 @@ const Cell = ({
   const {
     setting: { bombs, cols },
   } = useSetting();
-  const { board, positionBombs } = useBoard();
   const { isBombPlaced, handlePlaceBomb } = useBombPlaced();
+  const { board, positionBombs, revealValue, setupFlag } = useBoard();
   const cellWidth = useMemo(() => (width * 0.8) / (cols + 1), [cols]);
 
-  const touchCell = useCallback(() => {
-    if (!isBombPlaced) {
-      const copied = JSON.parse(JSON.stringify(board));
-
-      positionBombs(copied, bombs, [rowIdx, colIdx]);
+  const handleFirstTouch = useCallback(
+    (copied: CellType[][]) => {
       handlePlaceBomb(true);
+      return positionBombs(copied, bombs, [rowIdx, colIdx]);
+    },
+    [board, positionBombs, handlePlaceBomb]
+  );
+
+  const touchCell = useCallback(() => {
+    let copied = JSON.parse(JSON.stringify(board));
+    if (!isBombPlaced) {
+      copied = handleFirstTouch(copied);
     }
-  }, [board, isBombPlaced, positionBombs, handlePlaceBomb]);
+
+    const revealReturn = revealValue(copied, rowIdx, colIdx);
+    revealReturn === -1 && Alert.alert("Game Over");
+  }, [board, isBombPlaced, revealValue]);
+
+  const longTouchCell = useCallback(() => {
+    let copied = JSON.parse(JSON.stringify(board));
+    setupFlag(copied, rowIdx, colIdx);
+  }, [board, setupFlag]);
 
   return (
     <TouchableOpacity
+      activeOpacity={1}
       onPress={touchCell}
-      style={[styles.container, { width: cellWidth, height: cellWidth }]}
+      onLongPress={longTouchCell}
+      delayLongPress={100}
+      style={[
+        styles.container,
+        { width: cellWidth, height: cellWidth },
+        revealed && styles.revealed,
+      ]}
     >
-      <CustomText
-        style={[{ fontSize: cellWidth * 0.5 }, isBomb && { color: "red" }]}
-      >
-        {surroundedBombs}
+      <CustomText style={{ fontSize: cellWidth * 0.5 }}>
+        {revealed && surroundedBombs !== 0 ? surroundedBombs : ""}
+        {flagged ? "🚩" : ""}
       </CustomText>
     </TouchableOpacity>
   );
