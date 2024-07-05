@@ -1,11 +1,11 @@
-import React from "react";
+import { ReactNode } from "react";
 import { Text, StyleSheet, StyleProp, TextStyle } from "react-native";
 import { useFonts } from "expo-font";
 import { theme } from "@/style/color";
 
 interface Props {
   style?: StyleProp<TextStyle>;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 export default function CustomText({ children, style }: Props) {
   const [fontsLoaded] = useFonts({
@@ -19,7 +19,6 @@ export default function CustomText({ children, style }: Props) {
 
 const styles = StyleSheet.create({
   base: {
-    fontSize: 20,
     fontFamily: "MINE-SWEEPER",
     color: theme.text,
   },

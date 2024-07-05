@@ -1,9 +1,10 @@
-import StartPage from "./pages/StartPage";
+import { RecoilRoot } from "recoil";
+import App from "./App";
 
 export default function RootLayout() {
   return (
-    <>
-      <StartPage />
-    </>
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   );
 }
