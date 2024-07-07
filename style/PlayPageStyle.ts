@@ -6,4 +6,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.background,
   },
+  boardWrapper: {
+    display: "flex",
+    flex: 1,
+    justifyContent: "center",
+  },
 });

@@ -2,14 +2,14 @@ import { memo, useMemo } from "react";
 import { Dimensions, View } from "react-native";
 import CustomText from "./CustomText";
 import { styles } from "@/style/CellStyle";
-
+import { Theme, theme } from "@/style/color";
 import { CellType } from "@/recoil/CellState";
 
 type CellProps = CellType & { cols: number };
 
 const { width } = Dimensions.get("screen");
 
-const Cell = ({ cols, revealed, flagged, surroundedBombs }: CellProps) => {
+const Cell = ({ cols, flagged, revealed, surroundedBombs }: CellProps) => {
   const cellWidth = useMemo(() => (width - 6) / cols, [cols]);
 
   return (
@@ -20,7 +20,12 @@ const Cell = ({ cols, revealed, flagged, surroundedBombs }: CellProps) => {
         revealed && styles.revealed,
       ]}
     >
-      <CustomText style={{ fontSize: cellWidth * 0.5 }}>
+      <CustomText
+        style={{
+          fontSize: cellWidth * 0.5,
+          color: theme[`color${surroundedBombs}` as keyof Theme],
+        }}
+      >
         {revealed && surroundedBombs !== 0 ? surroundedBombs : ""}
         {flagged ? "🚩" : ""}
       </CustomText>

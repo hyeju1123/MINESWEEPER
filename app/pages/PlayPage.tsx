@@ -1,4 +1,4 @@
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import Board from "@/components/Board";
 import GameHeader from "@/components/GameHeader";
 import ActionSheet from "@/components/ActionSheet";
@@ -8,7 +8,9 @@ export default function PlayPage() {
   return (
     <SafeAreaView style={styles.container}>
       <GameHeader />
-      <Board />
+      <View style={styles.boardWrapper}>
+        <Board />
+      </View>
       <ActionSheet />
     </SafeAreaView>
   );

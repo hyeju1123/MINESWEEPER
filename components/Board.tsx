@@ -80,13 +80,17 @@ export default function Board() {
   }, [board]);
 
   return (
-    <FlashList
-      data={board}
-      renderItem={renderItem}
-      bounces={false}
-      estimatedItemSize={27}
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ paddingHorizontal: 3 }}
-    />
+    <>
+      <View style={styles.container}>
+        <FlashList
+          data={board}
+          renderItem={renderItem}
+          bounces={false}
+          estimatedItemSize={27}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
+      {rows > 8 && <View style={styles.downArrow} />}
+    </>
   );
 }
