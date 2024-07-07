@@ -2,6 +2,7 @@ import { SafeAreaView, ScrollView } from "react-native";
 import Board from "@/components/Board";
 import { styles } from "@/style/StartPageStyle";
 import GameHeader from "@/components/GameHeader";
+import ActionSheet from "@/components/ActionSheet";
 
 export default function PlayPage() {
   return (
@@ -10,6 +11,7 @@ export default function PlayPage() {
       <ScrollView bounces={false}>
         <Board />
       </ScrollView>
+      <ActionSheet />
     </SafeAreaView>
   );
 }

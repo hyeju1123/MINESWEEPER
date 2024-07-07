@@ -23,11 +23,14 @@ const Cell = ({
   surroundedBombs,
 }: CellProps) => {
   const {
-    setting: { bombs, cols },
+    setting: { bombs },
   } = useSetting();
   const { isBombPlaced, handlePlaceBomb } = useBombPlaced();
   const { board, positionBombs, revealValue, setupFlag } = useBoard();
-  const cellWidth = useMemo(() => (width * 0.8) / (cols + 1), [cols]);
+  const cellWidth = useMemo(
+    () => (width * 0.8) / (board[0].length + 1),
+    [board]
+  );
 
   const handleFirstTouch = useCallback(
     (copied: CellType[][]) => {
