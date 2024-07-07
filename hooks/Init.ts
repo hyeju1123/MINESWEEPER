@@ -1,16 +1,17 @@
 import { useCallback } from "react";
 import { defaultSetting } from "@/recoil/SettingState";
 
-import useTime from "@/hooks/Time";
 import useBoard from "@/hooks/Board";
 import useSetting from "@/hooks/Setting";
 import useBombPlaced from "@/hooks/BombPlaced";
+import { useResetRecoilState } from "recoil";
+import { timeState } from "@/recoil/TimeState";
 
 export default function Init() {
-  const { resetTime } = useTime();
   const { setting } = useSetting();
   const { initBoard } = useBoard();
   const { handlePlaceBomb } = useBombPlaced();
+  const resetTime = useResetRecoilState(timeState);
 
   const initGame = useCallback(() => {
     const { level } = setting;

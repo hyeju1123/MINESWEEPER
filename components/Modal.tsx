@@ -18,6 +18,8 @@ export default function Modal() {
     handleShowSheet(false);
   }, [initGame, handleSetting]);
 
+  console.log("modal");
+
   return (
     <View style={styles.modal}>
       <TouchableOpacity onPress={restartGame} style={styles.restartButton}>
