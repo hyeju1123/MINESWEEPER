@@ -1,30 +1,14 @@
-import { SafeAreaView, TouchableOpacity } from "react-native";
-import { RootStackParamList } from "../App";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { SafeAreaView } from "react-native";
 import CustomText from "@/components/CustomText";
+import PlayButton from "@/components/PlayButton";
 import LevelButton from "@/components/LevelButton";
 import { styles } from "@/style/StartPageStyle";
 
-import useBombPlaced from "@/hooks/BombPlaced";
-
-type StartPageProps = NativeStackScreenProps<RootStackParamList, "Start">;
-
-export default function StartPage({
-  navigation: { navigate },
-}: StartPageProps) {
-  const { handlePlaceBomb } = useBombPlaced();
-
-  const moveToPlay = () => {
-    navigate("Play");
-    handlePlaceBomb(false);
-  };
-
+export default function StartPage() {
   return (
     <SafeAreaView style={styles.container}>
       <CustomText style={styles.font}>MINE SWEEPER</CustomText>
-      <TouchableOpacity style={styles.button} onPress={moveToPlay}>
-        <CustomText style={styles.font}>GO</CustomText>
-      </TouchableOpacity>
+      <PlayButton />
       <>
         <LevelButton level="BEGINNER" />
         <LevelButton level="INTERMEDIATE" />

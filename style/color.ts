@@ -4,6 +4,8 @@ interface Theme {
   cellBorderBottom: string;
   card: string;
   text: string;
+  displayBg: string;
+  displayText: string;
 }
 
 export const theme: Theme = {
@@ -12,4 +14,6 @@ export const theme: Theme = {
   cellBorderBottom: "#808080",
   card: "#e0e0e0",
   text: "#323f4c",
+  displayBg: "#000000",
+  displayText: "#ff0000",
 };

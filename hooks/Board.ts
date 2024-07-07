@@ -125,5 +125,28 @@ export default function Board() {
     [setBoard]
   );
 
-  return { board, initBoard, positionBombs, revealValue, setupFlag };
+  const countLeftFlags = useCallback(
+    (flags: number) => {
+      const leftFlags =
+        flags -
+        board.reduce((totalAcc, row) => {
+          totalAcc += row.reduce((rowAcc, cell) => {
+            rowAcc += cell.flagged ? 1 : 0;
+            return rowAcc;
+          }, 0);
+          return totalAcc;
+        }, 0);
+      return leftFlags.toString();
+    },
+    [board]
+  );
+
+  return {
+    board,
+    initBoard,
+    positionBombs,
+    revealValue,
+    setupFlag,
+    countLeftFlags,
+  };
 }

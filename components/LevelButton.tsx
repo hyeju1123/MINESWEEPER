@@ -2,7 +2,6 @@ import { useCallback } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { styles } from "@/style/LevelButtonStyle";
 
-import useBoard from "@/hooks/Board";
 import useSetting from "@/hooks/Setting";
 import { LevelType, defaultSetting } from "@/recoil/SettingState";
 
@@ -15,13 +14,11 @@ export default function LevelButton({ level }: LevelButtonProps) {
     setting: { level: currentLev },
     handleSetting,
   } = useSetting();
-  const { initBoard } = useBoard();
   const { rows, cols } = defaultSetting[level];
 
   const setLevel = useCallback(() => {
     handleSetting(level);
-    initBoard(rows, cols);
-  }, [handleSetting, initBoard]);
+  }, [handleSetting]);
 
   return (
     <TouchableOpacity

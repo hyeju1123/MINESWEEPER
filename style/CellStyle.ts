@@ -15,7 +15,8 @@ export const styles = StyleSheet.create({
   },
   revealed: {
     borderWidth: 1,
-    borderColor: theme.cellBorderBottom,
+    borderTopColor: theme.cellBorderBottom,
+    borderLeftColor: theme.cellBorderBottom,
   },
   cellFont: {
     fontSize: 7,

@@ -18,7 +18,6 @@ const { width } = Dimensions.get("screen");
 const Cell = ({
   rowIdx,
   colIdx,
-  isBomb,
   revealed,
   flagged,
   surroundedBombs,
