@@ -1,50 +1,32 @@
-# Welcome to your Expo app 👋
+# 지뢰찾기 🎮
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<div align="center">
+<img width="300px" src="https://github.com/user-attachments/assets/beabe6c0-3b8b-49b5-ae95-870278d6473d"> 
+<img src="https://github.com/user-attachments/assets/aab3b963-10fa-4f37-80c0-82982686e310" width="300px"/> 
+<img width="300px" src="https://github.com/user-attachments/assets/ca2dce33-dd10-4082-9677-3ca29695af7d"> 
+<h3>순서대로 'Beginner > Intermediate > Expert' 레벨 </h3>
+</div>
 
-## Get started
+<br  />
+<br  />
 
-1. Install dependencies
+# 🔧 사용 기술
 
-   ```bash
-   npm install
-   ```
+- Typescript
+- React Native Expo
+- React navigation
+- Recoil
 
-2. Start the app
+<br/>
+<br/>
 
-   ```bash
-    npx expo start
-   ```
+# ⭐ 주요 기능
 
-In the output, you'll find options to open the app in a
+| 화면                                                                                                       | 기능                                                                                                                                     |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="https://github.com/user-attachments/assets/c442197c-38a6-4d2d-9bfd-d145a5d440a6" width="300px"/> | <b>블록에 써진 숫자 n을 기준으로, 주변에 n개의 폭탄이 있다는 뜻입니다<br> 폭탄으로 추정되는 곳에는 🚩을 꽂아 모든 블록을 열어주세요!</b> |
+| <img src="https://github.com/user-attachments/assets/9ca23411-8368-4411-97e1-ba345259261c" width="300px"/> | <b>폭탄이 있는 곳을 터치할 시, Game Over!</b>                                                                                            |
+| <img src="https://github.com/user-attachments/assets/2ac57d16-d5cc-4b4c-892b-632542ab1c53" width="300px"/> | <b>난이도를 변경하고 싶다면, 🙂 버튼을 눌러주세요</b>                                                                                    |
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+<br/>
+<br/>
