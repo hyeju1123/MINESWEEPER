@@ -1,9 +1,9 @@
 # 지뢰찾기 🎮
 
 <div align="center">
-<img width="300px" src="https://github.com/user-attachments/assets/beabe6c0-3b8b-49b5-ae95-870278d6473d"> 
-<img src="https://github.com/user-attachments/assets/aab3b963-10fa-4f37-80c0-82982686e310" width="300px"/> 
-<img width="300px" src="https://github.com/user-attachments/assets/ca2dce33-dd10-4082-9677-3ca29695af7d"> 
+<img width="150px" src="https://github.com/user-attachments/assets/beabe6c0-3b8b-49b5-ae95-870278d6473d"> 
+<img width="150px" src="https://github.com/user-attachments/assets/aab3b963-10fa-4f37-80c0-82982686e310"/> 
+<img width="150px" src="https://github.com/user-attachments/assets/ca2dce33-dd10-4082-9677-3ca29695af7d"> 
 <h3>순서대로 'Beginner > Intermediate > Expert' 레벨 </h3>
 </div>
 
